@@ -1,0 +1,556 @@
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;background:#fff;color:#111}
+a{text-decoration:none;color:inherit}
+
+.wrap{max-width:860px;margin:0 auto;padding:0 1.5rem}
+
+/* NAV */
+.nav{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 0;border-bottom:1px solid #eee;position:sticky;top:0;background:#fff;z-index:100}
+.nav-logo{font-size:15px;font-weight:600;letter-spacing:0.01em}
+.nav-links{display:flex;gap:1.4rem}
+.nav-links a{font-size:13px;font-weight:500;color:#111;padding:5px 0;border-bottom:2px solid transparent;transition:border-color 0.2s}
+.nav-links a:hover{border-color:#111}
+.nav-connect{font-size:13px;font-weight:500;background:#111;color:#fff;padding:8px 18px;border-radius:999px;transition:opacity 0.2s}
+.nav-connect:hover{opacity:0.8}
+
+/* HERO */
+.hero{padding:4rem 0 2rem}
+.hero-hi{font-size:15px;color:#555;margin-bottom:1rem;font-weight:400}
+.hero-h{font-size:clamp(28px,4.8vw,44px);font-weight:600;line-height:1.18;letter-spacing:-0.02em;color:#111;max-width:700px;margin-bottom:2rem}
+.hero-h span{color:#bbb}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn-dark{font-size:13px;font-weight:500;padding:10px 22px;background:#111;color:#fff;border-radius:999px;border:none;cursor:pointer;transition:opacity 0.2s}
+.btn-dark:hover{opacity:0.8}
+.btn-light{font-size:13px;font-weight:500;padding:10px 22px;background:#f4f4f4;color:#111;border-radius:999px;border:none;cursor:pointer;transition:background 0.2s}
+.btn-light:hover{background:#e8e8e8}
+
+/* SECTION LABEL */
+.sec-label{font-size:13px;font-weight:600;color:#111;margin-bottom:1.5rem;display:flex;align-items:center;gap:8px}
+.sec-label::after{content:'';flex:1;height:1px;background:#eee}
+
+/* PROJECTS */
+.proj-section{padding:3rem 0}
+.proj-card{border:1px solid #eee;border-radius:20px;overflow:hidden;margin-bottom:1.5rem;transition:box-shadow 0.2s}
+.proj-card:hover{box-shadow:0 4px 24px rgba(0,0,0,0.07)}
+.proj-inner{display:grid;grid-template-columns:1fr 1fr;min-height:280px}
+.proj-content{padding:2rem;display:flex;flex-direction:column;justify-content:space-between}
+.proj-eyebrow{font-size:11px;font-weight:600;color:#888;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:10px}
+.proj-title{font-size:18px;font-weight:600;color:#111;line-height:1.3;margin-bottom:1rem}
+.proj-stat-row{display:flex;align-items:baseline;gap:8px;margin-bottom:4px}
+.proj-stat-n{font-size:28px;font-weight:700;color:#111}
+.proj-stat-l{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:0.06em;max-width:140px;line-height:1.3}
+.proj-impact{font-size:11px;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:1rem;line-height:1.4}
+.proj-link{font-size:13px;font-weight:600;color:#111;display:inline-flex;align-items:center;gap:5px}
+.proj-link:hover{text-decoration:underline}
+.proj-visual{background:#f7f7f7;display:flex;align-items:center;justify-content:center;position:relative;border-left:1px solid #eee}
+.proj-tag{position:absolute;bottom:16px;left:16px;font-size:10px;font-weight:600;letter-spacing:0.08em;color:#888;text-transform:uppercase;background:#fff;padding:4px 10px;border-radius:999px;border:1px solid #eee}
+.phone-mock{width:90px;height:175px;background:#fff;border-radius:18px;border:2px solid #ddd;display:flex;flex-direction:column;overflow:hidden;box-shadow:0 8px 32px rgba(0,0,0,0.1)}
+.phone-top{height:8px;background:#f0f0f0;display:flex;justify-content:center;align-items:center}
+.phone-notch{width:24px;height:4px;background:#ddd;border-radius:999px}
+.phone-screen{flex:1;padding:6px;display:flex;flex-direction:column;gap:4px}
+.phone-row{height:8px;border-radius:4px;background:#f0f0f0}
+.phone-row.dark{background:#e0e0e0;width:60%}
+.phone-row.accent{background:#111;width:80%}
+.phone-block{height:40px;border-radius:6px;background:#f4f4f4;margin-top:4px}
+
+/* TOOLS */
+.tools-section{padding:2rem 0}
+.tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.tool-card{border:1px solid #eee;border-radius:14px;padding:1.1rem;display:flex;align-items:center;gap:12px;transition:border-color 0.2s}
+.tool-card:hover{border-color:#bbb}
+.tool-icon{width:38px;height:38px;border-radius:10px;background:#f4f4f4;display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.tool-name{font-size:13px;font-weight:600;color:#111;margin-bottom:2px}
+.tool-desc{font-size:11px;color:#888}
+
+/* ABOUT */
+.about-section{padding:2rem 0}
+.about-card{border:1px solid #eee;border-radius:20px;padding:2rem;display:grid;grid-template-columns:1fr auto;gap:2rem;align-items:start}
+.about-tag{font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px}
+.about-h{font-size:20px;font-weight:600;color:#111;margin-bottom:12px}
+.about-body{font-size:14px;color:#555;line-height:1.75;margin-bottom:1.25rem}
+.about-connect{font-size:13px;font-weight:600;color:#111;display:inline-flex;align-items:center;gap:5px;border-bottom:2px solid #111;padding-bottom:2px}
+.about-avatar{width:100px;height:100px;border-radius:16px;background:linear-gradient(135deg,#e8e8ff,#d0d0f0);display:flex;align-items:center;justify-content:center;font-size:28px;font-weight:700;color:#534AB7;flex-shrink:0}
+
+/* CERTS */
+.cert-section{padding:2rem 0}
+.cert-card{border:1px solid #eee;border-radius:16px;padding:1.5rem;margin-bottom:12px;display:grid;grid-template-columns:1fr auto;gap:1rem;align-items:center;transition:border-color 0.2s}
+.cert-card:hover{border-color:#bbb}
+.cert-eyebrow{font-size:11px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px}
+.cert-title{font-size:16px;font-weight:600;color:#111}
+.cert-badge{width:56px;height:56px;border-radius:12px;background:#f4f4f4;display:flex;align-items:center;justify-content:center;font-size:22px}
+
+/* SKILLS */
+.skills-section{padding:2rem 0}
+.skills-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:1rem}
+.skill-pill{font-size:12px;padding:6px 14px;border-radius:999px;border:1px solid #eee;color:#555;background:#fafafa;transition:all 0.2s}
+.skill-pill:hover{border-color:#111;color:#111}
+.skill-pill.hi{background:#111;color:#fff;border-color:#111}
+
+/* EXPERIENCE - Interactive */
+.exp-section{padding:2rem 0}
+.exp-timeline{position:relative;padding-left:28px}
+.exp-timeline::before{content:'';position:absolute;left:7px;top:8px;bottom:8px;width:1px;background:#eee}
+.exp-item{position:relative;margin-bottom:6px}
+.exp-dot{position:absolute;left:-25px;top:18px;width:9px;height:9px;border-radius:50%;background:#eee;border:2px solid #fff;box-shadow:0 0 0 1px #ddd;transition:background 0.2s,box-shadow 0.2s;z-index:1}
+.exp-item.open .exp-dot{background:#111;box-shadow:0 0 0 3px rgba(17,17,17,0.12)}
+.exp-trigger{width:100%;border:1px solid #eee;border-radius:16px;padding:1.1rem 1.3rem;background:#fff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;transition:border-color 0.2s,box-shadow 0.2s;text-align:left}
+.exp-trigger:hover{border-color:#bbb;box-shadow:0 2px 12px rgba(0,0,0,0.05)}
+.exp-item.open .exp-trigger{border-color:#111;border-radius:16px 16px 0 0;border-bottom-color:transparent}
+.exp-trigger-left{display:flex;flex-direction:column;gap:3px}
+.exp-co{font-size:14px;font-weight:600;color:#111}
+.exp-ro{font-size:12px;color:#666;font-weight:500}
+.exp-trigger-right{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0}
+.exp-dt{font-size:11px;color:#999;font-weight:500}
+.exp-lc{font-size:11px;color:#bbb}
+.exp-arrow{font-size:14px;color:#aaa;transition:transform 0.25s;margin-top:4px}
+.exp-item.open .exp-arrow{transform:rotate(180deg);color:#111}
+.exp-badge-cur{font-size:9px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;background:#111;color:#fff;padding:2px 8px;border-radius:999px}
+.exp-body{max-height:0;overflow:hidden;transition:max-height 0.35s ease;border:1px solid #111;border-top:none;border-radius:0 0 16px 16px;background:#fafafa}
+.exp-body-inner{padding:1.1rem 1.3rem}
+.exp-tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px}
+.exp-tag-pill{font-size:10px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;background:#f0f0f0;color:#555;padding:3px 10px;border-radius:999px}
+.exp-ul{list-style:none;padding:0;margin:0}
+.exp-ul li{font-size:13px;color:#555;line-height:1.65;padding:3px 0 3px 14px;position:relative}
+.exp-ul li::before{content:'·';position:absolute;left:2px;color:#bbb;font-size:16px;top:1px}
+
+/* FOOTER */
+.footer{border-top:1px solid #eee;padding:2.5rem 0;display:grid;grid-template-columns:1fr 1fr 1fr;gap:2rem}
+.footer-col-t{font-size:12px;font-weight:600;color:#888;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px}
+.footer-col a{display:block;font-size:13px;color:#555;margin-bottom:8px;transition:color 0.2s}
+.footer-col a:hover{color:#111}
+.footer-bottom{border-top:1px solid #eee;padding:1.5rem 0;display:flex;justify-content:space-between;align-items:center}
+.footer-copy{font-size:12px;color:#888}
+
+@media(max-width:580px){
+  .proj-inner{grid-template-columns:1fr}
+  .proj-visual{display:none}
+  .tools-grid{grid-template-columns:1fr 1fr}
+  .about-card{grid-template-columns:1fr}
+  .footer{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+}
+</style>
+
+<div style="background:#fff;min-height:100vh">
+<div class="wrap">
+
+<nav class="nav">
+  <div class="nav-logo">P.S.</div>
+  <div class="nav-links">
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#tools">Tools</a>
+    <a href="#about">About Me</a>
+  </div>
+  <a class="nav-connect" href="mailto:preyashah0707@gmail.com">Let's Connect!</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-hi">Hi I'm Preya Shah 👋</div>
+  <h1 class="hero-h">From raw data to real decisions — I engineer the <span>AI systems</span> that make businesses smarter.</h1>
+  <div class="hero-btns">
+    <button class="btn-dark" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">Projects</button>
+    <a class="btn-light" href="Preya_Shah_Software_Engineer.pdf" target="_blank">Resume ↗</a>
+  </div>
+</section>
+
+<section class="proj-section" id="projects">
+  <div class="sec-label">Projects</div>
+
+  <div class="proj-card">
+    <div class="proj-inner">
+      <div class="proj-content">
+        <div>
+          <div class="proj-eyebrow">Full-Stack & AI · Case Study</div>
+          <div class="proj-title">AI Sales Assistant for Local Businesses</div>
+          <div class="proj-stat-row">
+            <div class="proj-stat-n">100%</div>
+          </div>
+          <div class="proj-impact">Automated lead follow-up workflow</div>
+          <div class="proj-stat-row" style="margin-top:6px">
+            <div class="proj-stat-n">GPT</div>
+          </div>
+          <div class="proj-impact">Powered personalized replies & lead scoring</div>
+        </div>
+        <a class="proj-link" href="https://github.com/Preya0703" target="_blank">View on GitHub →</a>
+      </div>
+      <div class="proj-visual">
+        <div class="phone-mock">
+          <div class="phone-top"><div class="phone-notch"></div></div>
+          <div class="phone-screen">
+            <div class="phone-row accent"></div>
+            <div class="phone-row dark"></div>
+            <div class="phone-block"></div>
+            <div class="phone-row"></div>
+            <div class="phone-row dark"></div>
+            <div class="phone-block"></div>
+          </div>
+        </div>
+        <div class="proj-tag">Python · Django · OpenAI · ReactJS</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-card">
+    <div class="proj-inner">
+      <div class="proj-content">
+        <div>
+          <div class="proj-eyebrow">ML & Healthcare · Case Study</div>
+          <div class="proj-title">Mental Health Assessment Platform</div>
+          <div class="proj-stat-row">
+            <div class="proj-stat-n">ML</div>
+          </div>
+          <div class="proj-impact">Personalized recommendations via DASS-21 scoring</div>
+          <div class="proj-stat-row" style="margin-top:6px">
+            <div class="proj-stat-n">100%</div>
+          </div>
+          <div class="proj-impact">Secure auth & accessible frontend experience</div>
+        </div>
+        <a class="proj-link" href="https://github.com/Preya0703" target="_blank">View on GitHub →</a>
+      </div>
+      <div class="proj-visual" style="background:#f5f0ff">
+        <div class="phone-mock">
+          <div class="phone-top"><div class="phone-notch"></div></div>
+          <div class="phone-screen">
+            <div class="phone-row" style="background:#d8ccf8;width:90%"></div>
+            <div class="phone-row" style="background:#ede8ff"></div>
+            <div class="phone-block" style="background:#ede8ff"></div>
+            <div class="phone-row" style="background:#d8ccf8;width:70%"></div>
+            <div class="phone-block" style="background:#f3f0ff"></div>
+          </div>
+        </div>
+        <div class="proj-tag">Python · Django · ReactJS · ML</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="proj-card">
+    <div class="proj-inner">
+      <div class="proj-content">
+        <div>
+          <div class="proj-eyebrow">Data & ML · Case Study</div>
+          <div class="proj-title">Predictive Maintenance for Manufacturing</div>
+          <div class="proj-stat-row">
+            <div class="proj-stat-n">IoT</div>
+          </div>
+          <div class="proj-impact">Sensor-driven equipment failure prediction</div>
+          <div class="proj-stat-row" style="margin-top:6px">
+            <div class="proj-stat-n">↓</div>
+          </div>
+          <div class="proj-impact">Supported downtime reduction & smarter planning</div>
+        </div>
+        <a class="proj-link" href="https://github.com/Preya0703" target="_blank">View on GitHub →</a>
+      </div>
+      <div class="proj-visual" style="background:#f0fff5">
+        <div class="phone-mock">
+          <div class="phone-top"><div class="phone-notch"></div></div>
+          <div class="phone-screen">
+            <div class="phone-row" style="background:#a8e6c0;width:90%"></div>
+            <div class="phone-row" style="background:#d0f0e0"></div>
+            <div class="phone-block" style="background:#e8faf0"></div>
+            <div class="phone-row" style="background:#a8e6c0;width:65%"></div>
+            <div class="phone-block" style="background:#f0fdf5"></div>
+          </div>
+        </div>
+        <div class="proj-tag">Python · Scikit-learn · Pandas · IoT</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="exp-section" id="experience">
+  <div class="sec-label">Work Experience 💼</div>
+  <div class="exp-timeline">
+
+    <div class="exp-item open" id="exp-0">
+      <div class="exp-dot"></div>
+      <button class="exp-trigger" onclick="toggleExp(0)">
+        <div class="exp-trigger-left">
+          <span class="exp-co">DJA Bros Corp &nbsp;<span class="exp-badge-cur">Current</span></span>
+          <span class="exp-ro">Applied AI &amp; Data Analyst</span>
+        </div>
+        <div class="exp-trigger-right">
+          <span class="exp-dt">Apr 2026 – Present</span>
+          <span class="exp-lc">New York, NY</span>
+          <span class="exp-arrow">▼</span>
+        </div>
+      </button>
+      <div class="exp-body" id="body-0">
+        <div class="exp-body-inner">
+          <div class="exp-tags">
+            <span class="exp-tag-pill">Python</span>
+            <span class="exp-tag-pill">Machine Learning</span>
+            <span class="exp-tag-pill">Power BI</span>
+            <span class="exp-tag-pill">SQL</span>
+            <span class="exp-tag-pill">Feature Engineering</span>
+            <span class="exp-tag-pill">ETL</span>
+          </div>
+          <ul class="exp-ul">
+            <li>Pricing decisions got sharper — ML models I built now drive how the business values and moves diamond inventory</li>
+            <li>Zero guesswork in the data — automated pipelines I designed catch and fix quality issues before they reach any model</li>
+            <li>Leadership stopped waiting on reports — Power BI dashboards I built surface live model insights directly to decision-makers</li>
+            <li>Queries that were timing out now run cleanly — rewrote SQL workflows that couldn't handle production-scale data</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item" id="exp-1">
+      <div class="exp-dot"></div>
+      <button class="exp-trigger" onclick="toggleExp(1)">
+        <div class="exp-trigger-left">
+          <span class="exp-co">Absolute Services Private Limited</span>
+          <span class="exp-ro">Software Engineer — Data &amp; Backend</span>
+        </div>
+        <div class="exp-trigger-right">
+          <span class="exp-dt">Jul 2025 – Apr 2026</span>
+          <span class="exp-lc">Manchester, CT</span>
+          <span class="exp-arrow">▼</span>
+        </div>
+      </button>
+      <div class="exp-body" id="body-1">
+        <div class="exp-body-inner">
+          <div class="exp-tags">
+            <span class="exp-tag-pill">Python</span>
+            <span class="exp-tag-pill">SQL</span>
+            <span class="exp-tag-pill">Django</span>
+            <span class="exp-tag-pill">MySQL</span>
+            <span class="exp-tag-pill">Power BI</span>
+            <span class="exp-tag-pill">ETL</span>
+          </div>
+          <ul class="exp-ul">
+            <li>30% less time wasted on manual reporting — ETL pipelines I built replaced hours of repetitive work every week</li>
+            <li>Data teams trusted the numbers again — cleaned and restructured datasets brought accuracy up by 25%</li>
+            <li>Stakeholders made faster calls — replaced static weekly reports with live Power BI dashboards they could actually use</li>
+            <li>Backend held up under real load — Django + MySQL pipelines I built kept reporting stable as data volume grew</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item" id="exp-2">
+      <div class="exp-dot"></div>
+      <button class="exp-trigger" onclick="toggleExp(2)">
+        <div class="exp-trigger-left">
+          <span class="exp-co">Mental Health Assessment Platform</span>
+          <span class="exp-ro">Backend Developer</span>
+        </div>
+        <div class="exp-trigger-right">
+          <span class="exp-dt">Jan 2025 – May 2025</span>
+          <span class="exp-lc">Fairfield, CT</span>
+          <span class="exp-arrow">▼</span>
+        </div>
+      </button>
+      <div class="exp-body" id="body-2">
+        <div class="exp-body-inner">
+          <div class="exp-tags">
+            <span class="exp-tag-pill">Django</span>
+            <span class="exp-tag-pill">REST APIs</span>
+            <span class="exp-tag-pill">ReactJS</span>
+            <span class="exp-tag-pill">MySQL</span>
+          </div>
+          <ul class="exp-ul">
+            <li>Users got accurate, personalized results — built the scoring engine from scratch since no existing solution fit the need</li>
+            <li>Response times dropped — redesigned the database schema so assessment queries stopped being a bottleneck</li>
+            <li>Frontend and backend felt like one system — tight API integration meant no lag, no dropped state, no friction</li>
+            <li>Platform stayed secure at every touchpoint — auth and assessment flows built with reliability as the baseline, not an afterthought</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item" id="exp-3">
+      <div class="exp-dot"></div>
+      <button class="exp-trigger" onclick="toggleExp(3)">
+        <div class="exp-trigger-left">
+          <span class="exp-co">Umiya Nursery &amp; Farming</span>
+          <span class="exp-ro">Full Stack Developer</span>
+        </div>
+        <div class="exp-trigger-right">
+          <span class="exp-dt">Aug 2022 – May 2023</span>
+          <span class="exp-lc">India</span>
+          <span class="exp-arrow">▼</span>
+        </div>
+      </button>
+      <div class="exp-body" id="body-3">
+        <div class="exp-body-inner">
+          <div class="exp-tags">
+            <span class="exp-tag-pill">Python</span>
+            <span class="exp-tag-pill">MySQL</span>
+            <span class="exp-tag-pill">JavaScript</span>
+            <span class="exp-tag-pill">Bootstrap</span>
+            <span class="exp-tag-pill">HTML/CSS</span>
+          </div>
+          <ul class="exp-ul">
+            <li>A local farming business went fully digital — I built their entire online store from zero, end to end</li>
+            <li>Operations ran without me — the admin dashboard gave the owner full control over inventory, orders, and users independently</li>
+            <li>Customers could shop on any device — responsive UI meant no drop-off from mobile users</li>
+            <li>Business stayed secure as it grew — role-based access kept the right people in the right places as the team expanded</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<script>
+(function(){
+  var heights = {};
+  document.querySelectorAll('.exp-body').forEach(function(b){
+    b.style.maxHeight = '0px';
+  });
+  var first = document.getElementById('body-0');
+  if(first){ first.style.maxHeight = first.scrollHeight + 'px'; }
+})();
+function toggleExp(i){
+  var total = 4;
+  for(var j=0;j<total;j++){
+    var item = document.getElementById('exp-'+j);
+    var body = document.getElementById('body-'+j);
+    if(j===i){
+      var isOpen = item.classList.contains('open');
+      if(isOpen){
+        item.classList.remove('open');
+        body.style.maxHeight = '0px';
+      } else {
+        item.classList.add('open');
+        body.style.maxHeight = body.scrollHeight + 'px';
+      }
+    } else {
+      item.classList.remove('open');
+      body.style.maxHeight = '0px';
+    }
+  }
+}
+</script>
+
+<section class="tools-section" id="tools">
+  <div class="sec-label">My day-to-day tools 🛠️</div>
+  <div class="tools-grid">
+    <div class="tool-card"><div class="tool-icon">🐍</div><div><div class="tool-name">Python</div><div class="tool-desc">Backend & data scripting</div></div></div>
+    <div class="tool-card"><div class="tool-icon">🌐</div><div><div class="tool-name">Django</div><div class="tool-desc">REST API development</div></div></div>
+    <div class="tool-card"><div class="tool-icon">⚛️</div><div><div class="tool-name">ReactJS</div><div class="tool-desc">Frontend interfaces</div></div></div>
+    <div class="tool-card"><div class="tool-icon">🗄️</div><div><div class="tool-name">MySQL</div><div class="tool-desc">Database design & optimization</div></div></div>
+    <div class="tool-card"><div class="tool-icon">📊</div><div><div class="tool-name">Power BI</div><div class="tool-desc">Dashboards & KPI tracking</div></div></div>
+    <div class="tool-card"><div class="tool-icon">🤖</div><div><div class="tool-name">OpenAI API</div><div class="tool-desc">AI integration & automation</div></div></div>
+    <div class="tool-card"><div class="tool-icon">🔬</div><div><div class="tool-name">Scikit-learn</div><div class="tool-desc">ML model building</div></div></div>
+    <div class="tool-card"><div class="tool-icon">🐼</div><div><div class="tool-name">Pandas</div><div class="tool-desc">Data cleaning & analysis</div></div></div>
+    <div class="tool-card"><div class="tool-icon">🐙</div><div><div class="tool-name">Git / GitHub</div><div class="tool-desc">Version control</div></div></div>
+  </div>
+</section>
+
+<section class="about-section" id="about">
+  <div class="sec-label">About Me 🤘</div>
+  <div class="about-card">
+    <div>
+      <div class="about-tag">About Me</div>
+      <div class="about-h">Preya Shah</div>
+      <div class="about-body">
+        Software Engineer specializing in backend systems, data engineering, and applied AI — currently based in Jersey City, NJ.<br><br>
+        I build things that work at scale: REST APIs, ETL pipelines, ML models, and the dashboards that make all of it visible to the people who need it. My work sits at the intersection of engineering and data — I care about systems that are reliable, fast, and actually useful.<br><br>
+        MS in Computer Science & IT from Sacred Heart University. Currently at DJA Bros Corp as an Applied AI & Data Analyst, building forecasting models and data infrastructure for a real-world business problem.
+      </div>
+      <a class="about-connect" href="mailto:preyashah0707@gmail.com">Get in touch →</a>
+    </div>
+    <div class="about-avatar">PS</div>
+  </div>
+</section>
+
+<section class="cert-section">
+  <div class="sec-label">Certifications 🏆</div>
+
+  <div class="cert-card">
+    <div>
+      <div class="cert-eyebrow">Coursera Certification</div>
+      <div class="cert-title">Python for Data Science</div>
+    </div>
+    <div class="cert-badge">🐍</div>
+  </div>
+  <div class="cert-card">
+    <div>
+      <div class="cert-eyebrow">Professional Certification</div>
+      <div class="cert-title">SQL & Relational Databases</div>
+    </div>
+    <div class="cert-badge">🗄️</div>
+  </div>
+  <div class="cert-card">
+    <div>
+      <div class="cert-eyebrow">Professional Certification</div>
+      <div class="cert-title">Ethical Hacking Fundamentals</div>
+    </div>
+    <div class="cert-badge">🔐</div>
+  </div>
+  <div class="cert-card">
+    <div>
+      <div class="cert-eyebrow">Project Certification</div>
+      <div class="cert-title">Face Recognition App — Python</div>
+    </div>
+    <div class="cert-badge">👁️</div>
+  </div>
+</section>
+
+<section class="skills-section">
+  <div class="sec-label">Skills</div>
+  <div style="margin-bottom:8px;font-size:12px;color:#888;font-weight:500">Core stack</div>
+  <div class="skills-row">
+    <span class="skill-pill hi">Python</span>
+    <span class="skill-pill hi">Django</span>
+    <span class="skill-pill hi">ReactJS</span>
+    <span class="skill-pill hi">MySQL</span>
+    <span class="skill-pill hi">REST APIs</span>
+  </div>
+  <div style="margin-bottom:8px;font-size:12px;color:#888;font-weight:500">Data & AI</div>
+  <div class="skills-row">
+    <span class="skill-pill">Power BI</span>
+    <span class="skill-pill">Pandas</span>
+    <span class="skill-pill">Scikit-learn</span>
+    <span class="skill-pill">OpenAI API</span>
+    <span class="skill-pill">ETL pipelines</span>
+    <span class="skill-pill">Predictive analytics</span>
+    <span class="skill-pill">Feature Engineering</span>
+    <span class="skill-pill">Forecasting</span>
+    <span class="skill-pill">Model Evaluation</span>
+    <span class="skill-pill">NumPy</span>
+  </div>
+  <div style="margin-bottom:8px;font-size:12px;color:#888;font-weight:500">Also know</div>
+  <div class="skills-row">
+    <span class="skill-pill">JavaScript</span>
+    <span class="skill-pill">Java</span>
+    <span class="skill-pill">HTML5 / CSS</span>
+    <span class="skill-pill">Bootstrap</span>
+    <span class="skill-pill">Linux</span>
+    <span class="skill-pill">Shell Scripting</span>
+    <span class="skill-pill">Git / GitHub</span>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-col">
+    <div class="footer-col-t">Navigation</div>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#tools">Tools</a>
+    <a href="#about">About Me</a>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-t">Socials</div>
+    <a href="https://linkedin.com/in/preya-shah-3a696a170" target="_blank">LinkedIn</a>
+    <a href="https://github.com/Preya0703" target="_blank">GitHub</a>
+  </div>
+  <div class="footer-col">
+    <div class="footer-col-t">Contact</div>
+    <a href="mailto:preyashah0707@gmail.com">preyashah0707@gmail.com</a>
+    <a style="cursor:default;pointer-events:none">Jersey City, NJ, USA</a>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <div class="footer-copy">© 2026, Preya Shah. All rights reserved.</div>
+  <div class="footer-copy">Applied AI & Data Analyst · Full-Stack Engineer</div>
+</div>
+
+</div>
+</div>
